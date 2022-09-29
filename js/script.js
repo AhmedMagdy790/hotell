@@ -224,7 +224,7 @@ function onSlider() {
 onload = () => {
     accordionFun()
     onSlider();
-    // window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
 }
 
 
