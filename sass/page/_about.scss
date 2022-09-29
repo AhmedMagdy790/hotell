@@ -1,0 +1,33 @@
+@use "../colors" as *;
+@use "../variable" as *;
+.about {
+    padding-block: $section-padding;
+    .content {
+        overflow: hidden;
+    }
+    .banner {
+        position: relative;
+        margin: 160px 0;
+        max-width: 720px;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: -100px;
+            width: 50%;
+            height: calc(100% + 200px);
+            background-color: $bs-primary;
+            z-index: -1;
+        }
+        img {
+            margin: 0 auto;            
+            width: calc(100% - 40px);
+        }
+    }
+    .text {
+        p {
+            margin-bottom: 20px;
+            color: $bs-gray;
+        }
+    }
+}

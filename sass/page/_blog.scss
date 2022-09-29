@@ -1,0 +1,56 @@
+@use "../colors" as *;
+@use "../variable" as *;
+.blog-posts {
+    padding-block: $section-padding;
+    position: relative;
+    z-index: 3;
+    .slider {
+        .crards {
+            margin-bottom: 30px;
+            li {
+                padding: 20px;
+                .card {
+                    padding: 0;
+                    box-shadow: 0 0 10px rgba(7, 7, 7, 60%);
+                }
+                .image {
+                    position: relative;
+                    margin-bottom: 20px;
+                    i {
+                        position: absolute;
+                        bottom: 0;
+                        left: 30px;
+                        padding: 15px;
+                        border-radius: 50%;
+                        background: $bs-primary;
+                        color: $bs-white;
+                        transform: translateY(50%);
+                        font-size: 12px;
+                        box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.200);
+                    }
+                }
+                img {
+                    width: 100%;
+                }
+                h3 {
+                    padding: 20px;
+                    color: $bs-gray-dark;
+                }
+                a {
+                    text-transform: uppercase;
+                    padding: 20px;
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: $bs-gray;
+                }
+            }
+        }
+        .control-slider {
+            padding: 10px;
+            text-align: center;
+            .btn {
+                background: #fff;
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+@use "../colors.scss" as *;
+
+.hero {
+    background-image: url("../images/bg.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    height: 100vh;
+    .container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.hero-content {
+    h1 {
+        font-size: 50px;
+        font-weight: 700;
+        text-align: center;
+        color: $bs-white;
+        margin-bottom: 50px;
+        max-width: 600px;
+        padding: 0 10px;
+    }
+    .btn {
+        margin-inline: auto;
+    }
+}

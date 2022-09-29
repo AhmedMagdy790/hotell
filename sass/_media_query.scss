@@ -1,0 +1,104 @@
+// responsive for Larger than 576px screen 
+@media (max-width: 600px) {
+    .hero-content {
+        h1 {
+            font-size: 35px;
+            padding: 0;
+        }
+    }
+}
+
+@media (min-width: 576px) {
+    .footer-nav {
+        .item {
+            width: 50%;
+        }
+    }
+}
+
+// responsive for Larger than 768px screen 
+@media (min-width: 768px ) {
+    .footer-nav {
+        .content {
+            justify-content: flex-start;
+        }
+        .item {
+            min-width: 200px;
+            max-width: 220px;
+        }
+    }
+}
+
+
+
+//  responsive for Larger than 768px screen
+@media (min-width: 768px ) {
+
+}
+
+// responsive for Larger than 992px screen 
+@media (min-width: 992px ) {
+
+    // Hero 
+
+    .hero-content {
+        h1 {
+            max-width: 65%;
+           margin-inline: auto;
+        }
+    }
+
+    .sec-form-search {
+        .form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            .row {
+                input {
+                    margin: 0;
+                }
+                select {
+                    @extend input;
+                } 
+            }
+            .row.translate-y-100 {
+                i {
+                    transform: translateY(-50%)
+                }
+
+            }
+            & > * {
+                width: 25%;
+                flex: 0 0 auto;
+            }
+        }
+    }
+
+    // About
+    .about {
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+            .banner {
+                width: 50%;
+            }
+            .container {
+                width: 50%;
+                margin: 0;
+                padding: 0;
+            }
+        }
+        .banner {
+            // margin:  160px auto;
+            // max-width: 600px;
+        }
+    }
+}
+
+//  responsive for Larger than 1200px screen
+@media (min-width: 1200px ) {
+
+}

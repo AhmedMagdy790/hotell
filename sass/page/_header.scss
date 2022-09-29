@@ -1,0 +1,93 @@
+@use "../colors" as *;
+@use "../variable" as *;
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-block: 20px;
+    width: 100%;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            a {
+                color: $bs-white;
+            }
+        }
+        .menu-icon {
+            .bars {
+                width: 30px;
+                line-height: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                gap: 7px;
+                cursor: pointer;
+                span {
+                    height: 3px;
+                    width: 100%;
+                    background: hsla(0, 0%, 100%);
+                    border-radius: 10px;
+                }
+            } 
+            span {
+                display: inline-block;
+            }
+        }
+        .navbar {
+            position: absolute;
+            top: 0;
+            right: -100%;
+            z-index: 999999;
+            background: #fff;
+            box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.200);
+            padding: 20px;
+            height: 100vh;
+            max-width: 320px;
+            width: 100%;
+            transition: 0.6s ease-in-out;
+            visibility: hidden;
+            &.active {
+                right: 0%;
+                visibility: visible;
+            }
+            .icon-close {
+                .close {
+                    width: 20px;
+                    font-size: 32px;
+                    padding: 2px;
+                    display: inline-block;
+                    margin-left: calc(100% - 20px);
+                    cursor: pointer;
+                }
+            }
+            .navbar-list {
+                %activ {
+                    color: $bs-primary;
+                }
+                li:first-child {
+                    a {
+                        @extend %activ;
+                    }
+                }
+
+                a {
+                    transition: $transition;
+                    padding: 8px 10px;
+                    color: $bs-secondary;
+                    &:is(:hover, :focus) {
+                        @extend %activ;
+                        transform: translateX(10px);
+                    }
+                }
+            }
+        }
+        .phone-number {
+            display: none;
+        }
+    }
+}

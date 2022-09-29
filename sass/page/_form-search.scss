@@ -1,0 +1,65 @@
+@use "../colors" as *;
+.sec-form-search {
+    padding: 30px;
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 30%);
+    background: hsl(0, 0%, 100%);
+    width: 95%;
+    margin-inline: auto;
+    position: relative;
+    top: -50px;
+    .row {
+        position: relative;
+        i,
+        .text-input {
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            font-size: 12px;
+            color: $bs-gray;
+        }
+        .text-input {
+            right: unset;
+            left: 20px;
+            font-size: 16px;
+        }
+    }
+    .row.translate-y-100 {
+        i {
+            transform: translateY(-100%);
+        }
+    }
+
+    input {
+        height: 50px;
+        padding-inline: 20px;
+        background: hsl(210deg 20% 95%);
+        margin-bottom: 10px;
+        border-radius: 20px;
+        outline: 0;
+        border: 0;
+    }
+
+    input::-webkit-datetime-edit,
+    input::-webkit-inner-spin-button,
+    input::-webkit-clear-button {
+        display: none;
+    }
+
+    input[type="date"]::-webkit-inner-spin-button,
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        display: none;
+        -webkit-appearance: none;
+    }
+
+    select {
+        width: 100%;
+        border: 1px solid hsla(0, 0%, 0%, 10%);
+        appearance: none;
+        @extend input;
+    }
+    .btn {
+        width: 100%;
+        text-transform: capitalize;
+    }
+}

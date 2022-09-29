@@ -1,0 +1,42 @@
+@use "../colors" as *;
+@use "../variable" as *;
+.services {
+    padding-block: $section-padding; 
+    background: #f8f9fa ;
+}
+
+.services-slider {
+    .crards {
+        .card {
+            width: 100%;
+            padding: 100px 50px;
+            background: $bs-white;
+            box-shadow: 0 0 10px hsl(0, 0%, 90%);
+            display: inline-block;
+            
+            i {
+                font-size: 50px;
+                color: $bs-green;
+                margin-bottom: 10px;
+            }
+            h3 {
+                font-weight: bold;
+                margin-bottom: 10px;
+                color: $bs-gray-dark;
+            }
+            p {
+                color: $bs-gray-transparent;
+                margin-bottom: 50px;
+                font-size: 14px;
+            }
+            a {
+                font: {
+                    weight: 600;
+                    size: 16px 
+                }
+                color: $bs-gray;
+
+            }
+        }
+    }
+}
