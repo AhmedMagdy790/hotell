@@ -3,7 +3,7 @@
 .container {
     padding-inline: 15px;
     margin: 0 auto;
-    overflow: hidden;
+    max-width: 1200px;
 }
 
 %head {
@@ -106,26 +106,39 @@ h3 {
 }
 
 // Slider
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .slider {
-    overflow: hidden;
-    .content-items {     
-        overflow: hidden;
-        width: 100%;
-        height: 100%;
-        position: relative;
-        padding-inline: 15px;
-    }
     .crards {
-        user-select: none;
-        width: max-content;
-        padding: 20px 0 ;
-        display: flex;
-        align-items: center;
 
         .item {
-            z-index: 1;
-            height: 100%;
-            padding-right: 15px;
+            box-shadow: 0 0 10px hsla(0, 0%, 0%, 30%);
         }
             
         .item img {
@@ -134,15 +147,12 @@ h3 {
             -webkit-user-drag: none;
             -o-user-drag: none;
             -moz-user-drag: none;
-            transition: transform 0.7s;
+            // transition: transform 0.7s;
         }
         
         .card {
             width: 100%;
             background: $bs-white;
-            box-shadow: 0 0 10px hsl(0, 0%, 90%);
-            display: inline-block;
-            
             i {
                 font-size: 50px;
                 color: $bs-green;
@@ -201,82 +211,3 @@ h3 {
         cursor: no-drop;
     } 
 }
-
-
-@mixin keyframes($name, $num1, $num2) {
-    @keyframes #{$name} {
-        0% {
-            transform: translateX($num1);
-        }
-        100% {
-            transform: translateX($num2);
-        }
-    }
-    
-}
-
-@media (min-width: 300px) {
-    .slider {
-        .crards {
-            .item {
-                max-width: 270px;
-            }
-        }
-    }
-}
-
-@media (min-width: 400px) {
-    .slider {
-        .crards {
-            .item {
-                max-width: 370px;
-            }
-        }
-    }
-}
-
-@media (min-width: 500px) {
-    .slider {
-        .crards {
-            .item {
-                max-width: 470px;
-            }
-        }
-    }
-}
-
-@media (min-width: 600px) {
-    .slider {
-        .crards {
-            .item {
-                max-width: 500px;
-            }
-        }
-    }
-}
-
-@media (min-width: 768px) {
-    .slider {
-        .crards {
-            .item {
-                max-width: 700px;
-            }
-        }
-    }
-}
-
-@media (min-width: 922px) {
-    .slider {
-        .crards {
-            .item {
-                max-width: 400px;
-            }
-        }
-    }
-}
-
-
-// @include keyframes(centerToRight, 0%, 100%);
-// @include keyframes(leftToCenter, -100%, 0%);
-// @include keyframes(RightToCenter, 100%, 0%);
-// @include keyframes(centerToLeft, 0%, -100%);

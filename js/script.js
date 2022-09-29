@@ -93,94 +93,138 @@ icon_close_menu.onclick = () => {
 }
 
 
-
-
 // accordion
 function accordionFun() {
-    console.log(accordion)
     accordion.forEach(  function(el) {
-        console.log(el.children[0].children[2])
         el.children[0].children[2].onclick = () => {
             if(el.children[1].style.height == ""){
                 el.children[1].style.height = (el.children[1].children[0].clientHeight + 2)+"px";
+                el.children[0].children[1].style.transform = "rotate(0deg)";
             }else {
                 el.children[1].style.height = null;
+                el.children[0].children[1].style.transform = "rotate(180deg)";
             }
         }
     });
 };
 
-function sliderShow(el, next, prev) {
-    let element = el.children[0].children[0];
-    let parent = element.parentElement;
-    
-    // init
-    
-    let i = 0;
-    let lengthChildern = parent.children[i].children.length;
-    let widthItem = (element.children[0].clientWidth);
-    let p;
-    let n = (element.clientWidth - (widthItem));
-    if(document.body.clientWidth < 600){
-        p = (element.clientWidth - (widthItem * 2));
-    }
-    if(document.body.clientWidth > 600){
-        p = (element.clientWidth - (widthItem * 2));
-    }
-    if(document.body.clientWidth > 922){
-        p = (element.clientWidth - (widthItem * 3));
-    }
-
-    let po = -p;
-
-    function movItem() {
-
-        if(po ==  -( (lengthChildern ))){
-            parent.children[i].style.transition = "none";
-        }else {
-            parent.children[i].style.transition = "0.7s";
-        }
-
-        parent.children[i].style.transform = `translate3d( ${po}px, 0px, 0px)`;
-
-        // next 
-        next.onclick = () => {
-            if(po < 0){
-                po += (element.children[0].clientWidth);
-            }
-            movItem();
-            console.log(element.children[0].clientWidth)
-        }
-        // Prev
-        prev.onclick = () => {
-            if( po > -n){
-                po -= element.children[0].clientWidth;
-            }
-            movItem();
-        }
-        // console.log(po)
-        // setTimeout(movItem, 3000);
-    };
-    movItem();
-};
-
-
 function onSlider() {
+    new Swiper(".services-slider", {
+        spaceBetween: 30,
+        loop: false,
+        loopFillGroupWithBlank: true,
+        navigation: {
+          nextEl: "#next-services",
+          prevEl: "#prev-services",
+        },
+        breakpoints: {
+              0: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          },
+        mousewheel: true,
+          keyboard: true,
+          speed: 700,
+        
+    });
 
+    new Swiper(".blog-posts-slider", {
+        spaceBetween: 30,
+        loop: false,
+        loopFillGroupWithBlank: true,
+        navigation: {
+          nextEl: "#next-blog",
+          prevEl: "#prev-blog",
+        },
+        breakpoints: {
+              0: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          },
+        mousewheel: true,
+          keyboard: true,
+          speed: 700,
+        
+    });
 
-    sliderShow(services_slidere, nextServices, prevServices);
-    sliderShow(blogPostsSlider, nextBlog, prevBlog);
-    sliderShow(testimonialsSlider, nextTestimonials, prevTestimonials);
-    sliderShow(instagramSlider, nextInstagram, prevInstagram);
+    new Swiper(".testimonials-slider", {
+        spaceBetween: 30,
+        loop: false,
+        loopFillGroupWithBlank: true,
+        navigation: {
+          nextEl: "#next-testimonials",
+          prevEl: "#prev-testimonials",
+        },
+        breakpoints: {
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            992: {
+              slidesPerView: 2,
+            },
+          },
+        mousewheel: true,
+          keyboard: true,
+          speed: 700,
+        
+    });
+
+    new Swiper(".instagram-slider", {
+        loop: true,
+        loopFillGroupWithBlank: true,
+        navigation: {
+          nextEl: "#next-instagram",
+          prevEl: "#prev-instagram",
+        },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: true,
+        },
+        breakpoints: {
+              0: {
+              slidesPerView: 1,
+            },
+            768: {
+              watchSlidesProgress: true,
+              slidesPerView: 3,
+              autoplay: {
+                delay: 500,
+            },
+            },
+            992: {
+                slidesPerView: 6,
+                autoplay: {
+                    delay: 500,
+                },
+            },
+        },
+        mousewheel: true,
+        keyboard: true,
+        speed: 900,
+        
+    });
+
 }
 
 onload = () => {
     accordionFun()
     onSlider();
-    onresize = () => {
-        onSlider();
-    };
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
 }
 
 

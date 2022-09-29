@@ -57,10 +57,14 @@ body::-webkit-scrollbar-thumb {
   background-color: #198754;
 }
 
+.swiper {
+  padding: 15px;
+}
+
 .container {
   padding-inline: 15px;
   margin: 0 auto;
-  overflow: hidden;
+  max-width: 1200px;
 }
 
 h1,
@@ -165,32 +169,30 @@ h3 {
   opacity: 0;
 }
 
-.slider {
-  overflow: hidden;
-}
-.slider .content-items {
-  overflow: hidden;
+.swiper {
   width: 100%;
   height: 100%;
-  position: relative;
-  padding-inline: 15px;
 }
-.slider .crards {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  padding: 20px 0;
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* Center slide text vertically */
   display: flex;
+  justify-content: center;
   align-items: center;
 }
-.slider .crards .item {
-  z-index: 1;
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
   height: 100%;
-  padding-right: 15px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.slider .crards .item {
+  box-shadow: 0 0 10px hsla(0deg, 0%, 0%, 0.3);
 }
 .slider .crards .item img {
   width: 100%;
@@ -198,13 +200,10 @@ h3 {
   -webkit-user-drag: none;
   -o-user-drag: none;
   -moz-user-drag: none;
-  transition: transform 0.7s;
 }
 .slider .crards .card {
   width: 100%;
   background: #fff;
-  box-shadow: 0 0 10px hsl(0deg, 0%, 90%);
-  display: inline-block;
 }
 .slider .crards .card i {
   font-size: 50px;
@@ -257,36 +256,6 @@ h3 {
   cursor: no-drop;
 }
 
-@media (min-width: 300px) {
-  .slider .crards .item {
-    max-width: 270px;
-  }
-}
-@media (min-width: 400px) {
-  .slider .crards .item {
-    max-width: 370px;
-  }
-}
-@media (min-width: 500px) {
-  .slider .crards .item {
-    max-width: 470px;
-  }
-}
-@media (min-width: 600px) {
-  .slider .crards .item {
-    max-width: 500px;
-  }
-}
-@media (min-width: 768px) {
-  .slider .crards .item {
-    max-width: 700px;
-  }
-}
-@media (min-width: 922px) {
-  .slider .crards .item {
-    max-width: 400px;
-  }
-}
 .header {
   position: fixed;
   left: 0;
@@ -461,12 +430,12 @@ h3 {
   background: #f8f9fa;
 }
 
+.services-slider .crards .item {
+  box-shadow: 0 0 10px hsla(0deg, 0%, 0%, 0.1);
+}
 .services-slider .crards .card {
-  width: 100%;
   padding: 100px 50px;
   background: #fff;
-  box-shadow: 0 0 10px hsl(0deg, 0%, 90%);
-  display: inline-block;
 }
 .services-slider .crards .card i {
   font-size: 50px;
@@ -526,13 +495,6 @@ h3 {
 }
 .blog-posts .slider .crards {
   margin-bottom: 30px;
-}
-.blog-posts .slider .crards li {
-  padding: 20px;
-}
-.blog-posts .slider .crards li .card {
-  padding: 0;
-  box-shadow: 0 0 10px rgba(7, 7, 7, 0.6);
 }
 .blog-posts .slider .crards li .image {
   position: relative;
@@ -600,7 +562,7 @@ h3 {
 .sec-faq .item .title .icon {
   position: relative;
   transform: rotate(180deg);
-  transition: 0.25s ease;
+  transition: 0.6s ease;
 }
 .sec-faq .item .title .icon span {
   position: absolute;
@@ -644,6 +606,7 @@ h3 {
 }
 .sec-faq .item .text p {
   color: hsla(0deg, 0%, 100%, 0.78);
+  margin-bottom: 20px;
 }
 
 .testimonials {
@@ -657,9 +620,11 @@ h3 {
   padding: 40px;
 }
 .testimonials .testimonials-slider .card p {
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 600;
   margin-bottom: 20px;
   color: hsla(0deg, 0%, 0%, 0.5);
+  line-height: 1.5;
 }
 .testimonials .testimonials-slider .card .person {
   display: flex;

@@ -11,10 +11,12 @@
             }
             p {
                 font: {
-                    size: 14px;
+                    size: 16px;
+                    weight: 600;
                 }
                 margin-bottom: 20px;
-                color: hsla(0, 0%, 0%, 50%)
+                color: hsla(0, 0%, 0%, 50%);
+                line-height: 1.5;
             }
             .person {
                 display: flex;
