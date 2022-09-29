@@ -624,10 +624,12 @@ h3 {
 }
 .sec-faq .item .title .open-acco {
   position: absolute;
-  left: 0;
-  right: 0;
-  width: 100%;
+  top: 0;
+  right: 10px;
+  width: 40px;
   height: 100%;
+  border-radius: 50%;
+  cursor: pointer;
 }
 .sec-faq .item .content {
   overflow: hidden;

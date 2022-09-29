@@ -27,7 +27,7 @@ let nextInstagram = document.getElementById("next-instagram");
 
 
 // Acordion
-let accordion = document.querySelector(".accordion .item");
+let accordion = document.querySelectorAll(".accordion .item");
 let itemImage = document.querySelector(".item-image");
 
 // Effect Page
@@ -52,27 +52,27 @@ window.onscroll = () => {
 
 function scrollEffect(num1, num2) {
     if(window.scrollY > num2){
-        accord(num1);
+        effectItem(num1);
     }
 }
-function accord(num) {
+function effectItem(num) {
     animation.forEach((el) => {
-        accordIF(el.classList.contains("hero-content"),1);
-        accordIF(el.classList.contains("sec-form-search"),2);
-        accordIF(el.classList.contains("services"),3);
-        accordIF(el.classList.contains("about-heading"),4);
-        accordIF(el.classList.contains("banner-about"),5);
-        accordIF(el.classList.contains("text-about"),6);
-        accordIF(el.classList.contains("blog-heading"),7);
-        accordIF(el.classList.contains("blog-posts-slider"),8);
-        accordIF(el.classList.contains("faq-title"),9);
-        accordIF(el.classList.contains("accordion"),10);
-        accordIF(el.classList.contains("testimonials-heading"),11);
-        accordIF(el.classList.contains("testimonials-slider"),12);
-        accordIF(el.classList.contains("heading-instagram"),13);
-        accordIF(el.classList.contains("instagram-slider"),14);
+        effectItemIF(el.classList.contains("hero-content"),1);
+        effectItemIF(el.classList.contains("sec-form-search"),2);
+        effectItemIF(el.classList.contains("services"),3);
+        effectItemIF(el.classList.contains("about-heading"),4);
+        effectItemIF(el.classList.contains("banner-about"),5);
+        effectItemIF(el.classList.contains("text-about"),6);
+        effectItemIF(el.classList.contains("blog-heading"),7);
+        effectItemIF(el.classList.contains("blog-posts-slider"),8);
+        effectItemIF(el.classList.contains("faq-title"),9);
+        effectItemIF(el.classList.contains("accordion"),10);
+        effectItemIF(el.classList.contains("testimonials-heading"),11);
+        effectItemIF(el.classList.contains("testimonials-slider"),12);
+        effectItemIF(el.classList.contains("heading-instagram"),13);
+        effectItemIF(el.classList.contains("instagram-slider"),14);
 
-        function accordIF(element,n) {
+        function effectItemIF(element,n) {
             if(element && num == n){
                 el.setAttribute("data-anim", "on");
             };
@@ -81,7 +81,7 @@ function accord(num) {
     });
 }
 
-accord(1);
+effectItem(1);
 
 
 // Menu
@@ -97,10 +97,10 @@ icon_close_menu.onclick = () => {
 
 // accordion
 function accordionFun() {
+    console.log(accordion)
     accordion.forEach(  function(el) {
-
+        console.log(el.children[0].children[2])
         el.children[0].children[2].onclick = () => {
-            console.log(el.children[1].style.height);
             if(el.children[1].style.height == ""){
                 el.children[1].style.height = (el.children[1].children[0].clientHeight + 2)+"px";
             }else {
@@ -175,7 +175,7 @@ function onSlider() {
 }
 
 onload = () => {
-
+    accordionFun()
     onSlider();
     onresize = () => {
         onSlider();
